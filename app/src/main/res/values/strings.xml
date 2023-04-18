@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ComposeBusinessCardApp</string>
+    <string name="name">Eavelie</string>
+    <string name="occupation">Student</string>
 </resources>
