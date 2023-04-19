@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -14,8 +13,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.Icon
+import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
@@ -50,7 +49,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     App(
                         stringResource(R.string.name),
-                        stringResource(R.string.occupation)
+                        stringResource(R.string.occupation),
+                        stringResource(R.string.icon_1_text),
+                        stringResource(R.string.icon_2_text),
+                        stringResource(R.string.icon_3_text)
                     )
                 }
             }
@@ -122,7 +124,13 @@ fun IconWithText(
 }
 
 @Composable
-fun App(name: String, occupation: String, modifier: Modifier = Modifier) {
+fun App(
+    name: String,
+    occupation: String,
+    phoneNumber: String,
+    socialMediaUserName: String,
+    email: String,
+    modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.background(color = Color(0xFF073142)),
         verticalArrangement = Arrangement.Center
@@ -130,7 +138,9 @@ fun App(name: String, occupation: String, modifier: Modifier = Modifier) {
         LogoWithText(
             name,
             occupation,
-            Modifier.align(Alignment.CenterHorizontally).padding(bottom = 100.dp)
+            Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(bottom = 100.dp)
         )
     }
     Column(
@@ -144,24 +154,24 @@ fun App(name: String, occupation: String, modifier: Modifier = Modifier) {
         Spacer(modifier.height(6.5.dp))
         IconWithText(
             icon = Icons.Filled.Phone,
-            iconDesc = "Phone Icon",
-            text = "082123765098"
+            iconDesc = stringResource(R.string.icon_1_name),
+            text = phoneNumber
         )
         Spacer(modifier.height(6.5.dp))
         Divider(color = Color.Gray, thickness = 1.dp)
         Spacer(Modifier.height(6.5.dp))
         IconWithText(
             icon = Icons.Filled.Share,
-            iconDesc = "Share Icon",
-            text = "@NewbInAndroid"
+            iconDesc = stringResource(R.string.icon_2_name),
+            text = socialMediaUserName
         )
         Spacer(modifier.height(6.5.dp))
         Divider(color = Color.Gray, thickness = 1.dp)
         Spacer(Modifier.height(6.5.dp))
         IconWithText(
             icon = Icons.Filled.Email,
-            iconDesc = "Email Icon",
-            text = "eavelienereova@gmail.com"
+            iconDesc = stringResource(R.string.icon_3_name),
+            text = email
         )
     }
 }
@@ -175,7 +185,10 @@ fun AppPreview() {
     ComposeBusinessCardAppTheme {
         App(
             stringResource(R.string.name),
-            stringResource(R.string.occupation)
+            stringResource(R.string.occupation),
+            stringResource(R.string.icon_1_text),
+            stringResource(R.string.icon_2_text),
+            stringResource(R.string.icon_3_text)
         )
     }
 }

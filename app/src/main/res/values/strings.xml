@@ -2,4 +2,10 @@
     <string name="app_name">ComposeBusinessCardApp</string>
     <string name="name">Eavelie</string>
     <string name="occupation">Student</string>
+    <string name="icon_1_name">Phone Icon</string>
+    <string name="icon_1_text">082123765098</string>
+    <string name="icon_2_name">Share Icon</string>
+    <string name="icon_2_text">\@NewbInAndroid</string>
+    <string name="icon_3_name">Email Icon</string>
+    <string name="icon_3_text">eavelienereova@gmail.com</string>
 </resources>
